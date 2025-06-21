@@ -4,6 +4,7 @@ import Spinner from "./components/Spinner.jsx";
 import MovieCard from "./components/MovieCard.jsx";
 import { useDebounce } from "react-use";
 import { getTrendingMovies, updateSearchCount } from "./appwrite.js";
+import { useNavigate } from "react-router-dom"
 
 
 const API_BASE_URL = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc";
@@ -26,6 +27,13 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [trendingMovies, setTrendingMovies] = useState([]);
+
+  const navigate = useNavigate();
+
+  const handleClick = (title) => {
+    console.log(title);
+    navigate(`/movieDetails/${title}`);
+  }
 
   //Debounce the search term to prevent making too many API requests
   //by waiting for the user to stop typing for 500 milliseconds (which is half a second)
@@ -106,7 +114,12 @@ const App = () => {
               {trendingMovies.map((movie, index) => (
                 <li key={movie.$id}>
                   <p>{index + 1}</p>
-                  <img src={movie.poster_url} alt={movie.title} />
+                  <img 
+                    src={movie.poster_url} 
+                    alt={movie.title} 
+                    className="cursor-pointer" 
+                    onClick={() => handleClick(movie.$id)}
+                  />
                 </li>
               ))}
             </ul>
