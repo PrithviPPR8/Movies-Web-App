@@ -45,9 +45,22 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <h1 className="text-white text-3xl">Movie Details: {id}</h1>
-      <h2>Name of the movie is: {foundMovie.title}</h2>
-      {/* <img src={`https://image.tmdb.org/t/p/w500/${foundMovie.poster_path}` }/> */}
+      {/* <h1 className="text-white text-3xl">Movie Details: {id}</h1> */}
+
+      <div className="flex flex-row mt-3">
+        <img 
+          src={`https://image.tmdb.org/t/p/w500/${foundMovie.poster_path}` }
+          className="ml-3"
+        />
+
+        <div className="ml-3 ">
+          <h2 className="font-dm-sans text-5xl">{foundMovie.title}</h2>
+          <p className="font-dm-sans text-[#A8B5DB] mt-2 text-2xl">Release Date: {foundMovie.release_date}</p>
+          {/* <p className="font-dm-sans text-[#A8B5DB] mt-2 text-2xl">Duration: {foundMovie.release_date}</p> */}
+        </div>
+      </div>
+
+
     </div>
   )
 }
