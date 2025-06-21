@@ -5,6 +5,7 @@ import MovieCard from "./components/MovieCard.jsx";
 import { useDebounce } from "react-use";
 import { getTrendingMovies, updateSearchCount } from "./appwrite.js";
 
+
 const API_BASE_URL = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc";
 // const API_BASE_URL2 = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc";
 const API_SEARCH_URL = "https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1"

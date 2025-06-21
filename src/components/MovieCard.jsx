@@ -1,8 +1,16 @@
-import React from 'react'
+import { useNavigate } from "react-router-dom"
+import MovieDetails from "./MovieDetails"
 
 const MovieCard = ({ movie: { title, vote_average, poster_path, release_date, original_language } }) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = (title) => {
+    navigate(`/movieDetails/${title}`);
+  }
+
   return (
-    <div className="movie-card">
+    <div className="movie-card cursor-pointer" onClick={() => handleClick(title)} >
         <img src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : "/no-movie.png"} alt={title} />
 
         <div className="mt-4">
