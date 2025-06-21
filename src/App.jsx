@@ -118,7 +118,7 @@ const App = () => {
                     src={movie.poster_url} 
                     alt={movie.title} 
                     className="cursor-pointer" 
-                    onClick={() => handleClick(movie.$id)}
+                    onClick={() => handleClick(movie.title)}
                   />
                 </li>
               ))}

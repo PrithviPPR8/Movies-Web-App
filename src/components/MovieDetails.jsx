@@ -47,7 +47,7 @@ const MovieDetails = () => {
     <div>
       <h1 className="text-white text-3xl">Movie Details: {id}</h1>
       <h2>Name of the movie is: {foundMovie.title}</h2>
-      <img src={`https://image.tmdb.org/t/p/w500/${foundMovie.poster_path}` }/>
+      {/* <img src={`https://image.tmdb.org/t/p/w500/${foundMovie.poster_path}` }/> */}
     </div>
   )
 }
