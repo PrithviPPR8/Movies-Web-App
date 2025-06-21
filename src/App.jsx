@@ -32,7 +32,7 @@ const App = () => {
 
   const handleClick = (title) => {
     console.log(title);
-    navigate(`/movieDetails/${title}`);
+    navigate(`/trendingMovieDetails/${title}`);
   }
 
   //Debounce the search term to prevent making too many API requests
