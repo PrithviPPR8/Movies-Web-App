@@ -65,8 +65,8 @@ const MovieDetails = () => {
             <p className="font-dm-sans text-[#FFFFFF] mt-2 text-2xl">{movie.runtime}</p>
           </div>
 
-          <div className="flex flex-row mt-4 bg-gray-500 w-[180px] h-[40px] rounded-lg px-2 py-1">
-              <img src="/star.svg" className="w-[25px] h-[28px]" />
+          <div className="flex flex-row mt-4 bg-gray-500 w-[190px] h-[40px] rounded-lg pl-2 py-1">
+              <img src="/star.svg" className="w-[25px] h-[29px] pt-1 pb-0.5" />
               <p className="font-dm-sans text-white text-2xl ml-2">{movie.vote_average ? `${Math.round(movie.vote_average)}/10` : "N/A"}</p>
               <p className="font-dm-sans text-[#A8B5DB] text-2xl ml-2">{movie.vote_count ? `(${movie.vote_count})` : ""}</p>
           </div>
